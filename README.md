@@ -1,2 +1,2 @@
-# landing-page
+# Declan Sweeney
 Personal Landing Page
