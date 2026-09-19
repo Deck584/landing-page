@@ -5,8 +5,11 @@ Builds on, and does not replace, the Capture Inbox row of 17/18 September 2026
 ("TypeSafe AI (Jev, System One typed-decision models): vendor parked, one pattern harvested", 3df6c12d-30c3-81b9).
 Where this note disagrees with that row it says so and gives the source.
 
-Freeze notice: ACF-1390 (intake freeze to 14 October 2026) applies to tooling evaluations. This note files nothing
-in Notion. Section 9 gives a paste-ready addendum for the existing Capture Inbox row so no new row is minted.
+Status, 19 September 2026 (later the same session): on Declan's instruction the capture was closed and the work
+logged as one combined ACF row, ACF-1496 (3e06c12d-30c3-81e4-a3c6-fb6d33e6e53a), whose Trigger carries the six
+sequenced limbs in Section 8. Declan overruled the ACF-1390 intake freeze for that one row. The addendum in Section 9
+was applied to the Capture Inbox row verbatim and the row is Done. The item 18 design document carries a dated note
+naming Jev as the fourth Section 5 candidate class.
 
 ---
 
@@ -321,7 +324,7 @@ and on the item 18 page's Rule 2 table.
 
 ---
 
-## 9. Paste-ready addendum for Capture Inbox row 3df6c12d-30c3-81b9
+## 9. Addendum as applied to Capture Inbox row 3df6c12d-30c3-81b9 (row now Done, discharged into ACF-1496)
 
 > ADDENDUM, 19 September 2026 (Claude Code Remote research session, Declan intent to adopt stated). Re-open
 > condition partly met: TypeSafe publishes a DPA with EU SCCs Modules 2 and 3 under Irish law, no-training
