@@ -25,13 +25,15 @@
       --maxw: 1120px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     html, body { margin: 0; padding: 0; background: radial-gradient(1200px 800px at 20% -10%, #173557 0%, var(--bg) 55%); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif; }
     a { color: var(--brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .wrap { max-width: var(--maxw); margin: 0 auto; padding: 24px; }
 
     /* Header */
-    header { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(11,22,35,.85), rgba(11,22,35,.6)); border-bottom: 1px solid rgba(255,255,255,.06); }
+    header { position: sticky; top: 0; z-index: 5; background: linear-gradient(180deg, rgba(11,22,35,.97), rgba(11,22,35,.9)); border-bottom: 1px solid rgba(255,255,255,.06); }
     .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand-logo { width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow); display: grid; place-items: center; font-weight: 800; color: #06111d; }
@@ -48,6 +50,8 @@
     .cta .btn { padding: 14px 18px; border-radius: 14px; font-weight: 700; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); color: var(--text); }
     .cta .btn.primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); color: #05121e; border: none; box-shadow: var(--shadow); }
     .hero-pic { justify-self: end; width: min(360px, 90vw); aspect-ratio: 1; border-radius: var(--radius-lg); background: linear-gradient(135deg, #16283f, #09131f); border: 1px solid rgba(255,255,255,.08); position: relative; overflow: hidden; box-shadow: var(--shadow); }
+    .hero-pic img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .hero-pic:has(img)::after { content: none; }
     .hero-pic::after { content: "Upload headshot"; position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-weight: 600; letter-spacing: .3px; }
 
     /* Stats */
@@ -119,7 +123,11 @@
           <a class="btn" href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="hero-pic" aria-label="Headshot placeholder"></div>
+      <div class="hero-pic" aria-label="Headshot placeholder">
+        <!-- Headshot: shown above the fold, so load it eagerly with explicit dimensions to avoid layout shift.
+        <img src="/declan-sweeney-headshot.webp" alt="Declan Sweeney" width="360" height="360" decoding="async" fetchpriority="high" />
+        -->
+      </div>
     </section>
 
     <!-- Stats -->
@@ -288,20 +296,6 @@
   </footer>
 
   <script>
-    // Smooth scrolling for same-page anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const id = a.getAttribute('href');
-        if (id.length > 1) {
-          const el = document.querySelector(id);
-          if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }
-      });
-    });
-
     // Dynamic year
     document.getElementById('year').textContent = new Date().getFullYear();
 
